@@ -4,6 +4,10 @@
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 export PATH="/opt/homebrew/bin:$PATH"
 
+# volta
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
 # ============================================================================
 # Environment Variables
 # ============================================================================
