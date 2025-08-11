@@ -62,6 +62,7 @@ source <(fzf --zsh)
 alias zshconfig="vi ~/.zshrc"
 alias ohmyzsh="vi ~/.oh-my-zsh"
 
+# python
 alias python=python3
 alias pip=pip3
 
