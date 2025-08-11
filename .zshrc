@@ -1,25 +1,67 @@
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# ============================================================================
+# PATH
+# ============================================================================
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH="/opt/homebrew/bin:$PATH"
 
-alias python="python3"
-alias vim="nvim"
+# ============================================================================
+# Environment Variables
+# ============================================================================
+export LANG=ja_JP.UTF-8
 
-export PATH="/Library/PostgreSQL/15/bin:$PATH"
+# ============================================================================
+# Instant prompt
+# ============================================================================
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/condy/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/condy/google-cloud-sdk/path.zsh.inc'; fi
+# ============================================================================
+# Oh My Zsh Configuration
+# ============================================================================
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/condy/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/condy/google-cloud-sdk/completion.zsh.inc'; fi
+# ============================================================================
+# Plugins
+# ============================================================================
 
-# ghcup-env
-[ -f "/Users/condy/.ghcup/env" ] && . "/Users/condy/.ghcup/env"
+plugins=(
+    git                      # Git aliases and completion
+    zsh-autosuggestions     # Command suggestions based on history
+    zsh-syntax-highlighting # Syntax highlighting for commands
+)
 
-# tmux 分割用
-ide() {
-  tmux split-window -v -p 30 # ウィンドウを垂直に分割し、新しいペインを作成
-  tmux split-window -h -p 50 # さらに水平に分割
+# ============================================================================
+# Oh My Zsh Initialization
+# ============================================================================
+
+source $ZSH/oh-my-zsh.sh
+
+# Display Settings
+ENABLE_CORRECTION="true"             # Enable command auto-correction
+COMPLETION_WAITING_DOTS="true"       # Show dots while waiting for completion
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
+# ============================================================================
+# Personal Aliases
+# ============================================================================
+
+alias zshconfig="vi ~/.zshrc"
+alias ohmyzsh="vi ~/.oh-my-zsh"
+
+# ============================================================================
+# Functions
+# ============================================================================
+repo() {
+  local repodir=$(ghq list | fzf -1 +m) && cd $(ghq root)/$repodir
 }
-
-# starshipの設定
-eval "$(starship init zsh)"
 
