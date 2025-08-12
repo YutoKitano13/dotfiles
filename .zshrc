@@ -8,6 +8,10 @@ export PATH="/opt/homebrew/bin:$PATH"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
 # ============================================================================
 # Environment Variables
 # ============================================================================
@@ -55,6 +59,9 @@ COMPLETION_WAITING_DOTS="true"       # Show dots while waiting for completion
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
+# bun completions
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+
 # ============================================================================
 # Personal Aliases
 # ============================================================================
@@ -72,4 +79,3 @@ alias pip=pip3
 repo() {
   local repodir=$(ghq list | fzf -1 +m) && cd $(ghq root)/$repodir
 }
-
