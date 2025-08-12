@@ -25,6 +25,9 @@ return {
         "vim",
         "yaml",
       },
+      highlight = {
+        enable = not vim.g.vscode,
+      },
     },
   },
   
