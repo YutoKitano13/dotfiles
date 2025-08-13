@@ -1,7 +1,9 @@
--- 起動の高速化
+-- =====================================================================
+-- Bootstrap lazy.nvim
+-- =====================================================================
+
 pcall(function() vim.loader.enable() end)
 
--- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -18,50 +20,64 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Make sure to setup `mapleader` and `maplocalleader` before
--- loading lazy.nvim so that mappings are correct.
--- This is also a good place to setup other settings (vim.opt)
+-- =====================================================================
+-- Leader keys
+-- =====================================================================
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
--- 基本設定
-vim.opt.number = true               -- 行番号を表示
-vim.opt.relativenumber = true       -- 相対行番号を表示
-vim.opt.expandtab = true            -- タブをスペースに変換
-vim.opt.tabstop = 2                 -- タブ幅
-vim.opt.shiftwidth = 2              -- インデント幅
-vim.opt.smartindent = true          -- 賢いインデント
-vim.opt.ignorecase = true           -- 検索時に大文字小文字を区別しない
-vim.opt.smartcase = true            -- 大文字が含まれる場合は区別する
-vim.opt.clipboard = "unnamedplus"   -- システムクリップボードを使用
-vim.opt.termguicolors = true        -- True Colorサポート
-vim.opt.signcolumn = "yes"          -- サインカラムを常に表示
-vim.opt.wrap = false                -- 折り返さない
-vim.opt.scrolloff = 8               -- スクロール時の余白
-vim.opt.cursorline = not vim.g.vscode  -- カーソル行をハイライト（VSCode外のみ）
-vim.opt.updatetime = 250             -- CursorHoldイベントの待機時間
-vim.opt.timeoutlen = 400             -- キーマップのタイムアウト
-vim.opt.undofile = true              -- 永続的なundo
+-- =====================================================================
+-- Basic options
+-- =====================================================================
 
--- キーマップ設定
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.expandtab = true
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.smartindent = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.clipboard = "unnamedplus"
+vim.opt.termguicolors = true
+vim.opt.signcolumn = "yes"
+vim.opt.wrap = false
+vim.opt.scrolloff = 8
+vim.opt.cursorline = not vim.g.vscode
+vim.opt.updatetime = 250
+vim.opt.timeoutlen = 400
+vim.opt.undofile = true
+
+-- =====================================================================
+-- Keymaps
+-- =====================================================================
+
 local map = function(mode, lhs, rhs, desc)
   vim.keymap.set(mode, lhs, rhs, { silent = true, desc = desc })
 end
 
-map("i", "jj", "<Esc>", "Exit insert mode")  -- jjでInsertモードを抜ける
-map("n", "Y", "y$", "Yank to end of line")    -- Yで行末までヤンク
+map("i", "jj", "<Esc>", "Exit insert mode")
+map("n", "Y", "y$", "Yank to end of line")
 map("n", "<Esc>", "<cmd>nohlsearch<CR>", "Clear search highlight")
 
--- yank時のハイライト
+-- =====================================================================
+-- Autocommands
+-- =====================================================================
+
 vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function()
     vim.highlight.on_yank({ higroup = "IncSearch", timeout = 250 })
   end,
 })
 
--- Setup lazy.nvim
+-- =====================================================================
+-- Plugins
+-- =====================================================================
+
 require("lazy").setup({
   spec = {
+    -- Flash.nvim: Quick navigation
     {
       "folke/flash.nvim",
       event = "VeryLazy",
@@ -77,6 +93,7 @@ require("lazy").setup({
       },
     },
 
+    -- Mini.pairs: Auto pairs
     {
       "echasnovski/mini.pairs",
       event = "InsertEnter",
@@ -85,6 +102,7 @@ require("lazy").setup({
       end,
     },
 
+    -- Nvim-surround: Surround operations
     {
       "kylechui/nvim-surround",
       event = "VeryLazy",
@@ -93,6 +111,7 @@ require("lazy").setup({
       end,
     },
 
+    -- Treesitter: Better syntax understanding
     {
       "nvim-treesitter/nvim-treesitter",
       build = ":TSUpdate",
@@ -124,6 +143,7 @@ require("lazy").setup({
       end,
     },
 
+    -- Which-key: Keymap helper (VSCode excluded)
     {
       "folke/which-key.nvim",
       cond = not vim.g.vscode,
@@ -134,6 +154,7 @@ require("lazy").setup({
       },
     },
 
+    -- Tokyonight: Color scheme (VSCode excluded)
     {
       "folke/tokyonight.nvim",
       cond = not vim.g.vscode,
@@ -147,7 +168,7 @@ require("lazy").setup({
       end,
     },
   },
-  -- Configure any other settings here. See the documentation for more details.
+
   install = { colorscheme = { "tokyonight", "habamax" } },
   checker = { enabled = false },
   performance = {
