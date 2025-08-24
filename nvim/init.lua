@@ -143,6 +143,13 @@ require("lazy").setup({
       end,
     },
 
+    -- Gitsigns: Git diff indicators
+    {
+      "lewis6991/gitsigns.nvim",
+      event = { "BufReadPost", "BufNewFile" },
+      opts = {},
+    },
+
     -- Which-key: Keymap helper (VSCode excluded)
     {
       "folke/which-key.nvim",
