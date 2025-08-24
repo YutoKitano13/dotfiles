@@ -77,6 +77,27 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 require("lazy").setup({
   spec = {
+    -- mason.nvim
+    {
+      "mason-org/mason.nvim",
+      opts = {}
+    },
+
+    -- mason-lspconfig
+    {
+      "mason-org/mason-lspconfig.nvim",
+      dependencies = {
+        { "mason-org/mason.nvim" },
+        { "neovim/nvim-lspconfig" },
+      },
+      opts = {
+        ensure_installed = { "intelephense", "lua_ls" }
+      },
+    },
+
+    -- nvim-lspconfig
+    { "neovim/nvim-lspconfig" },
+
     -- Flash.nvim: Quick navigation
     {
       "folke/flash.nvim",
