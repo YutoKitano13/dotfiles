@@ -98,22 +98,6 @@ require("lazy").setup({
     -- nvim-lspconfig
     { "neovim/nvim-lspconfig" },
 
-    -- Flash.nvim: Quick navigation
-    {
-      "folke/flash.nvim",
-      event = "VeryLazy",
-      ---@type Flash.Config
-      opts = {},
-      -- stylua: ignore
-      keys = {
-        { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-        { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-        { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-        { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-        { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
-      },
-    },
-
     -- Mini.pairs: Auto pairs
     {
       "echasnovski/mini.pairs",
@@ -123,13 +107,17 @@ require("lazy").setup({
       end,
     },
 
-    -- Nvim-surround: Surround operations
+    -- nvim-telescope: fuzzy finder
     {
-      "kylechui/nvim-surround",
-      event = "VeryLazy",
-      config = function()
-        require("nvim-surround").setup()
-      end,
+      "nvim-telescope/telescope.nvim",
+      dependencies = { "nvim-lua/plenary.nvim" },
+      cond = not vim.g.vscode,
+      keys = {
+        { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find files" },
+        { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Live grep" },
+        { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
+        { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Help tags" },
+      },
     },
 
     -- Treesitter: Better syntax understanding
@@ -171,18 +159,7 @@ require("lazy").setup({
       opts = {},
     },
 
-    -- Which-key: Keymap helper (VSCode excluded)
-    {
-      "folke/which-key.nvim",
-      cond = not vim.g.vscode,
-      event = "VeryLazy",
-      opts = {
-        preset = "modern",
-        delay = 500,
-      },
-    },
-
-    -- Tokyonight: Color scheme (VSCode excluded)
+    -- Tokyonight: Color scheme
     {
       "folke/tokyonight.nvim",
       cond = not vim.g.vscode,
