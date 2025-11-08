@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(ls:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(gh pr list)",
+      "Bash(gh pr view:*)",
+      "Bash(gh pr diff:*)",
+      "mcp__context7",
+      "mcp__figma-mcp__get_code",
+      "mcp__figma-mcp__get_image",
+      "mcp__serena",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_snapshot",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_type",
+      "mcp__playwright__browser_click"
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bunx ccusage@latest statusline"
+  },
+  "alwaysThinkingEnabled": true
+}
