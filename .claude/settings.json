@@ -10,7 +10,7 @@
       "Bash(gh pr list)",
       "Bash(gh pr view:*)",
       "Bash(gh pr diff:*)",
-      "WebSearch(*)",
+      "WebSearch",
       "mcp__context7",
       "mcp__figma-mcp__get_code",
       "mcp__figma-mcp__get_image",

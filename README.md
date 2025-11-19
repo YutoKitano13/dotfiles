@@ -27,5 +27,7 @@
 ln -s ~/dotfiles/.zshrc ~/.zshrc
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/nvim ~/.config/nvim
-ln -s ~/dotfiles/.claude ~/.claude
+ln -s ~/dotfiles/.claude/settings.json ~/.claude/settings.json
+ln -s ~/dotfiles/.claude/CLAUDE.md ~/.claude/CLAUDE.md
+ln -s ~/dotfiles/.claude/commands ~/.claude/commands
 ```
