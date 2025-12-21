@@ -91,12 +91,53 @@ require("lazy").setup({
         { "neovim/nvim-lspconfig" },
       },
       opts = {
-        ensure_installed = { "intelephense", "lua_ls" }
+        ensure_installed = { "intelephense", "lua_ls", "pyright" }
       },
+      config = function(_, opts)
+        require("mason-lspconfig").setup(opts)
+        vim.lsp.enable("intelephense")
+        vim.lsp.enable("lua_ls")
+        vim.lsp.enable("pyright")
+      end,
     },
 
     -- nvim-lspconfig
     { "neovim/nvim-lspconfig" },
+
+    -- nvim-cmp: Autocompletion
+    {
+      "hrsh7th/nvim-cmp",
+      event = "InsertEnter",
+      dependencies = {
+        "hrsh7th/cmp-nvim-lsp",
+        "hrsh7th/cmp-buffer",
+        "hrsh7th/cmp-path",
+      },
+      config = function()
+        local cmp = require("cmp")
+        cmp.setup({
+          snippet = {
+            expand = function(args)
+              vim.snippet.expand(args.body)
+            end,
+          },
+          mapping = cmp.mapping.preset.insert({
+            ["<C-j>"] = cmp.mapping.select_next_item(),
+            ["<C-k>"] = cmp.mapping.select_prev_item(),
+            ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+            ["<C-f>"] = cmp.mapping.scroll_docs(4),
+            ["<C-Space>"] = cmp.mapping.complete(),
+            ["<C-e>"] = cmp.mapping.abort(),
+            ["<CR>"] = cmp.mapping.confirm({ select = true }),
+          }),
+          sources = cmp.config.sources({
+            { name = "nvim_lsp" },
+            { name = "buffer" },
+            { name = "path" },
+          }),
+        })
+      end,
+    },
 
     -- Mini.pairs: Auto pairs
     {
