@@ -6,6 +6,7 @@ This document defines the project's rules, objectives, and progress management m
 
 - While you must **think exclusively in English**, you are required to **respond in Japanese**.
 - To understand how to use a library, **always use the Context7 MCP** to retrieve the latest information.
+- When exploring the codebase, **actively use subagents** (Task tool with subagent_type=Explore) to gather context efficiently.
 
 ## Plan Mode Rules
 
