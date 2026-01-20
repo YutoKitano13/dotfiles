@@ -28,7 +28,7 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "bunx ccusage@latest statusline"
+    "command": "echo \"$(bunx ccusage@latest statusline) | $(git branch --show-current 2>/dev/null || echo '-')\""
   },
   "enabledPlugins": {
     "code-simplifier@claude-plugins-official": true,
