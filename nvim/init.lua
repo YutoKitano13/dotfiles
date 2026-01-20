@@ -60,6 +60,14 @@ end
 map("i", "jj", "<Esc>", "Exit insert mode")
 map("n", "Y", "y$", "Yank to end of line")
 map("n", "<Esc>", "<cmd>nohlsearch<CR>", "Clear search highlight")
+map("n", "<C-s>", "<cmd>w<CR>", "Save file")
+map("i", "<C-s>", "<Esc><cmd>w<CR>", "Save file")
+
+-- LSP keymaps
+map("n", "gd", vim.lsp.buf.definition, "Go to definition")
+map("n", "gD", vim.lsp.buf.declaration, "Go to declaration")
+map("n", "gi", vim.lsp.buf.implementation, "Go to implementation")
+map("n", "gr", vim.lsp.buf.references, "Go to references")
 
 -- =====================================================================
 -- Autocommands
@@ -91,13 +99,14 @@ require("lazy").setup({
         { "neovim/nvim-lspconfig" },
       },
       opts = {
-        ensure_installed = { "intelephense", "lua_ls", "pyright" }
+        ensure_installed = { "intelephense", "lua_ls", "pyright", "ts_ls" }
       },
       config = function(_, opts)
         require("mason-lspconfig").setup(opts)
         vim.lsp.enable("intelephense")
         vim.lsp.enable("lua_ls")
         vim.lsp.enable("pyright")
+        vim.lsp.enable("ts_ls")
       end,
     },
 
