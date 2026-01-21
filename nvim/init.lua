@@ -220,6 +220,9 @@ require("lazy").setup({
       opts = {},
     },
 
+    -- Fugitive: Git commands
+    { "tpope/vim-fugitive" },
+
     -- Lualine: Statusline
     {
       "nvim-lualine/lualine.nvim",
