@@ -196,6 +196,24 @@ require("lazy").setup({
       },
     },
 
+    -- Toggleterm: Terminal integration
+    {
+      "akinsho/toggleterm.nvim",
+      cond = not vim.g.vscode,
+      keys = {
+        { "<C-j>", "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
+      },
+      opts = {
+        direction = "float",
+        start_in_insert = true,
+        persist_mode = false,
+        on_open = function(term)
+          vim.keymap.set("t", "<C-j>", "<cmd>ToggleTerm<cr>", { buffer = term.bufnr })
+          vim.keymap.set("t", "jj", "<C-\\><C-n>", { buffer = term.bufnr })
+        end,
+      },
+    },
+
     -- nvim-telescope: fuzzy finder
     {
       "nvim-telescope/telescope.nvim",
