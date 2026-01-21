@@ -168,6 +168,34 @@ require("lazy").setup({
       end,
     },
 
+    -- Mini.comment: Comment toggle
+    {
+      "echasnovski/mini.comment",
+      event = { "BufReadPost", "BufNewFile" },
+      config = function()
+        require("mini.comment").setup()
+      end,
+    },
+
+    -- Mini.surround: Surround actions
+    {
+      "echasnovski/mini.surround",
+      event = { "BufReadPost", "BufNewFile" },
+      config = function()
+        require("mini.surround").setup()
+      end,
+    },
+
+    -- Indent-blankline: Indent guides
+    {
+      "lukas-reineke/indent-blankline.nvim",
+      main = "ibl",
+      event = { "BufReadPost", "BufNewFile" },
+      opts = {
+        indent = { char = "│" },
+      },
+    },
+
     -- nvim-telescope: fuzzy finder
     {
       "nvim-telescope/telescope.nvim",
