@@ -103,6 +103,17 @@ require("lazy").setup({
       },
       config = function(_, opts)
         require("mason-lspconfig").setup(opts)
+
+        -- lua_ls: Neovim用の設定
+        vim.lsp.config("lua_ls", {
+          settings = {
+            Lua = {
+              runtime = { version = "LuaJIT" },
+              workspace = { library = { vim.env.VIMRUNTIME } },
+            },
+          },
+        })
+
         vim.lsp.enable("intelephense")
         vim.lsp.enable("lua_ls")
         vim.lsp.enable("pyright")
