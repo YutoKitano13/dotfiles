@@ -220,6 +220,17 @@ require("lazy").setup({
       opts = {},
     },
 
+    -- Lualine: Statusline
+    {
+      "nvim-lualine/lualine.nvim",
+      cond = not vim.g.vscode,
+      opts = {
+        sections = {
+          lualine_b = { "branch", "diff", "diagnostics" },
+        },
+      },
+    },
+
     -- Tokyonight: Color scheme
     {
       "folke/tokyonight.nvim",
