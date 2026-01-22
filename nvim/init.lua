@@ -74,6 +74,7 @@ map("n", "gd", vim.lsp.buf.definition, "Go to definition")
 map("n", "gD", vim.lsp.buf.declaration, "Go to declaration")
 map("n", "gi", vim.lsp.buf.implementation, "Go to implementation")
 map("n", "gr", vim.lsp.buf.references, "Go to references")
+map("n", "<leader>e", vim.diagnostic.open_float, "Show error")
 
 -- =====================================================================
 -- Autocommands
