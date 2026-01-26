@@ -75,6 +75,7 @@ map("n", "gD", vim.lsp.buf.declaration, "Go to declaration")
 map("n", "gi", vim.lsp.buf.implementation, "Go to implementation")
 map("n", "gr", vim.lsp.buf.references, "Go to references")
 map("n", "<leader>e", vim.diagnostic.open_float, "Show error")
+map("n", "<leader>rn", vim.lsp.buf.rename, "Rename symbol")
 
 -- =====================================================================
 -- Autocommands
@@ -106,7 +107,7 @@ require("lazy").setup({
         { "neovim/nvim-lspconfig" },
       },
       opts = {
-        ensure_installed = { "intelephense", "lua_ls", "pyright", "ts_ls" }
+        ensure_installed = { "astro", "intelephense", "lua_ls", "pyright", "ts_ls" }
       },
       config = function(_, opts)
         require("mason-lspconfig").setup(opts)
@@ -121,6 +122,7 @@ require("lazy").setup({
           },
         })
 
+        vim.lsp.enable("astro")
         vim.lsp.enable("intelephense")
         vim.lsp.enable("lua_ls")
         vim.lsp.enable("pyright")
@@ -241,6 +243,7 @@ require("lazy").setup({
       event = { "BufReadPost", "BufNewFile" },
       opts = {
         ensure_installed = {
+          "astro",
           "bash",
           "html",
           "javascript",
@@ -283,6 +286,7 @@ require("lazy").setup({
       opts = {
         sections = {
           lualine_b = { "branch", "diff", "diagnostics" },
+          lualine_c = { { "filename", path = 1 } },
         },
       },
     },
