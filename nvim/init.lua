@@ -251,6 +251,7 @@ require("lazy").setup({
           "lua",
           "markdown",
           "markdown_inline",
+          "php",
           "python",
           "query",
           "regex",
@@ -291,22 +292,20 @@ require("lazy").setup({
       },
     },
 
-    -- Tokyonight: Color scheme
+    -- GitHub Theme: Color scheme (colorblind-friendly)
     {
-      "folke/tokyonight.nvim",
+      "projekt0n/github-nvim-theme",
       cond = not vim.g.vscode,
       lazy = false,
       priority = 1000,
       config = function()
-        require("tokyonight").setup({
-          style = "night",
-        })
-        vim.cmd([[colorscheme tokyonight]])
+        require("github-theme").setup({})
+        vim.cmd([[colorscheme github_dark_colorblind]])
       end,
     },
   },
 
-  install = { colorscheme = { "tokyonight", "habamax" } },
+  install = { colorscheme = { "github_dark_colorblind", "habamax" } },
   checker = { enabled = false },
   performance = {
     rtp = {
