@@ -3,6 +3,7 @@
     "allow": [
       "Bash(mkdir:*)",
       "Bash(ls:*)",
+      "Bash(grep:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(git push:*)",
@@ -37,5 +38,8 @@
     "pr-review-toolkit@claude-plugins-official": true,
     "code-review@claude-plugins-official": true
   },
-  "alwaysThinkingEnabled": true
+  "alwaysThinkingEnabled": true,
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  }
 }
