@@ -199,6 +199,7 @@ require("lazy").setup({
     {
       "lukas-reineke/indent-blankline.nvim",
       main = "ibl",
+      cond = not vim.g.vscode,
       event = { "BufReadPost", "BufNewFile" },
       opts = {
         indent = { char = "│" },
