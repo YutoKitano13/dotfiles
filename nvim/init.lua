@@ -195,6 +195,23 @@ require("lazy").setup({
       end,
     },
 
+    -- Oil: File explorer as a buffer
+    {
+      "stevearc/oil.nvim",
+      cond = not vim.g.vscode,
+      keys = {
+        { "-", "<cmd>Oil<cr>", desc = "Open parent directory" },
+      },
+      opts = {
+        default_file_explorer = true,
+        columns = { "icon" },
+        skip_confirm_for_simple_edits = true,
+        view_options = {
+          show_hidden = true,
+        },
+      },
+    },
+
     -- Indent-blankline: Indent guides
     {
       "lukas-reineke/indent-blankline.nvim",
@@ -206,14 +223,14 @@ require("lazy").setup({
       },
     },
 
--- nvim-telescope: fuzzy finder
+    -- nvim-telescope: fuzzy finder
     {
       "nvim-telescope/telescope.nvim",
       dependencies = { "nvim-lua/plenary.nvim" },
       cond = not vim.g.vscode,
       keys = {
-        { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find files" },
-        { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Live grep" },
+        { "<leader>ff", "<cmd>Telescope find_files hidden=true<cr>", desc = "Find files" },
+        { "<leader>fg", "<cmd>Telescope live_grep additional_args={'--hidden'}<cr>", desc = "Live grep" },
         { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
         { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Help tags" },
       },
