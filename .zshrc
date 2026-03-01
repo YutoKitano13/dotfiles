@@ -24,20 +24,10 @@ if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-clou
 export LANG=ja_JP.UTF-8
 
 # ============================================================================
-# Instant prompt
-# ============================================================================
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-# ============================================================================
 # Oh My Zsh Configuration
 # ============================================================================
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME=""
 
 # ============================================================================
 # Plugins
@@ -58,9 +48,6 @@ source $ZSH/oh-my-zsh.sh
 # Display Settings
 ENABLE_CORRECTION="true"             # Enable command auto-correction
 COMPLETION_WAITING_DOTS="true"       # Show dots while waiting for completion
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
@@ -85,3 +72,8 @@ alias pip=pip3
 repo() {
   local repodir=$(ghq list | fzf -1 +m) && cd $(ghq root)/$repodir
 }
+
+# ============================================================================
+# Starship Prompt
+# ============================================================================
+eval "$(starship init zsh)"

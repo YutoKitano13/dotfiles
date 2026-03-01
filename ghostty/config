@@ -12,6 +12,15 @@ font-size = 16
 font-family = Hack Nerd Font
 
 # =========================
+# theme
+# =========================
+theme = GitHub Dark Colorblind
+background-opacity = 0.90
+background-blur = true
+split-divider-color = #888888
+unfocused-split-opacity = 0.8
+
+# =========================
 # Pane navigation
 # =========================
 keybind = ctrl+h=goto_split:left
@@ -43,5 +52,5 @@ keybind = ctrl+apostrophe=resize_split:up,10
 # =========================
 # scroll up/down 
 # =========================
-keybind = ctrl+shift+k=scroll_page_lines:-3
-keybind = ctrl+shift+j=scroll_page_lines:3
+keybind = ctrl+shift+k=scroll_page_lines:-5
+keybind = ctrl+shift+j=scroll_page_lines:5
