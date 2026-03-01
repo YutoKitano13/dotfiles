@@ -6,10 +6,9 @@
 
 - Homebrew
 - Oh My Zsh
-- Powerlevel10k
+- Starship
 - zsh-autosuggestions
 - zsh-syntax-highlighting
-- tmux
 - Neovim
 - fzf
 - ghq
@@ -25,10 +24,9 @@
 
 ```bash
 ln -s ~/dotfiles/.zshrc ~/.zshrc
-ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/nvim ~/.config/nvim
 ln -s ~/dotfiles/.claude/settings.json ~/.claude/settings.json
 ln -s ~/dotfiles/.claude/CLAUDE.md ~/.claude/CLAUDE.md
 ln -s ~/dotfiles/.claude/commands ~/.claude/commands
-ln -s ~/dotfiles/.claude/skillss ~/.claude/skills
+ln -s ~/dotfiles/.claude/skills ~/.claude/skills
 ```
