@@ -27,6 +27,6 @@ ln -s ~/dotfiles/.zshrc ~/.zshrc
 ln -s ~/dotfiles/nvim ~/.config/nvim
 ln -s ~/dotfiles/.claude/settings.json ~/.claude/settings.json
 ln -s ~/dotfiles/.claude/CLAUDE.md ~/.claude/CLAUDE.md
-ln -s ~/dotfiles/.claude/commands ~/.claude/commands
 ln -s ~/dotfiles/.claude/skills ~/.claude/skills
+ln -s ~/dotfiles/.agents ~/.agents
 ```
