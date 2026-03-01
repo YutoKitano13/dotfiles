@@ -1,3 +1,7 @@
+# claude code
+.agents/*
+!.agents/.skill-lock.json
+
 # nvim
 nvim/tt.*
 nvim/.tests

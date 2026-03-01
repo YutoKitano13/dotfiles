@@ -1,0 +1,36 @@
+{
+  "version": 3,
+  "skills": {
+    "chat-sdk": {
+      "source": "vercel/chat",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel/chat.git",
+      "skillPath": "skills/chat/SKILL.md",
+      "skillFolderHash": "a17debed2281aa10889af0baee986c3520de86f2",
+      "installedAt": "2026-02-25T14:49:12.642Z",
+      "updatedAt": "2026-02-25T14:55:21.624Z"
+    },
+    "find-skills": {
+      "source": "vercel-labs/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/skills.git",
+      "skillPath": "skills/find-skills/SKILL.md",
+      "skillFolderHash": "c2f31172b6f256272305a5e6e7228b258446899f",
+      "installedAt": "2026-02-25T14:49:32.894Z",
+      "updatedAt": "2026-02-25T14:49:32.894Z"
+    }
+  },
+  "dismissed": {
+    "findSkillsPrompt": true
+  },
+  "lastSelectedAgents": [
+    "amp",
+    "codex",
+    "cursor",
+    "gemini-cli",
+    "github-copilot",
+    "kimi-cli",
+    "opencode",
+    "claude-code"
+  ]
+}
