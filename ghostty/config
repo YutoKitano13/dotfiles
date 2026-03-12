@@ -15,8 +15,8 @@ font-family = Hack Nerd Font
 # theme
 # =========================
 theme = GitHub Dark Colorblind
-background-opacity = 0.90
-background-blur = true
+background-opacity = 0.75
+background-blur = 20
 split-divider-color = #888888
 unfocused-split-opacity = 0.8
 
