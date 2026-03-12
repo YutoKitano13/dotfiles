@@ -22,6 +22,7 @@ if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-clou
 # Environment Variables
 # ============================================================================
 export LANG=ja_JP.UTF-8
+export EDITOR="nvim"
 
 # ============================================================================
 # Oh My Zsh Configuration
