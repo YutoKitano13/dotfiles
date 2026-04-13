@@ -96,7 +96,7 @@ git push -u origin <branch-name>
 テンプレートの各セクションを変更内容に基づいて埋めてPRを作成します。
 
 ```bash
-gh pr create --draft --base <base-branch> --title "<PRタイトル>" --body "$(cat <<'EOF'
+gh pr create --draft --base <base-branch> --title "<type>: <PRタイトル>" --body "$(cat <<'EOF'
 <テンプレートに基づいたPR本文>
 EOF
 )"
@@ -107,7 +107,7 @@ EOF
 以下のデフォルトフォーマットを使用します。
 
 ```bash
-gh pr create --draft --base <base-branch> --title "<PRタイトル>" --body "$(cat <<'EOF'
+gh pr create --draft --base <base-branch> --title "<type>: <PRタイトル>" --body "$(cat <<'EOF'
 ## 概要
 
 <変更内容の要約を1〜3文で記載>
@@ -136,6 +136,10 @@ EOF
 # PR URLの取得
 gh pr view --json url -q '.url'
 ```
+
+**PRタイトルのルール:**
+- Conventional Commits形式の接頭辞を必ず付ける: `feat:`, `fix:`, `chore:`, `refactor:`, `docs:`, `test:` など
+- 例: `feat: ユーザー認証機能を追加`, `fix: AI企画案カードの表示改善`
 
 ## 重要な注意事項
 
