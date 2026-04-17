@@ -19,11 +19,13 @@
       "Bash(gh pr checks:*)",
       "Bash(gh pr diff:*)",
       "Bash(gh api:*)",
+      "Bash(playwright-cli:*)",
       "WebFetch",
       "WebSearch",
       "Skill",
       "mcp__context7",
-      "mcp__mastra"
+      "mcp__mastra",
+      "mcp__plugin_figma_figma"
     ]
   },
   "statusLine": {
