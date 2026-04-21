@@ -39,6 +39,7 @@
     "code-review@claude-plugins-official": true,
     "figma@claude-plugins-official": true
   },
+  "cleanupPeriodDays": 10000,
   "language": "Japanese",
   "alwaysThinkingEnabled": true
 }
