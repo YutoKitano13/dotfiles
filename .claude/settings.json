@@ -3,6 +3,10 @@
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
   },
   "permissions": {
+    "ask": [
+      "Bash(rm -rf *)",
+      "Bash(rm -r *)"
+    ],
     "allow": [
       "Bash(mkdir:*)",
       "Bash(ls:*)",
