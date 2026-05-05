@@ -3,6 +3,7 @@
 -- =====================================================================
 -- fd       : brew install fd        (fast file finder for Telescope)
 -- ripgrep  : brew install ripgrep   (live grep for Telescope)
+-- hls      : ghcup install hls      (Haskell LSP — installed via ghcup, not Mason)
 
 -- =====================================================================
 -- Bootstrap lazy.nvim
@@ -122,11 +123,17 @@ require("lazy").setup({
           },
         })
 
+        -- hls: ghcup管理のhaskell-language-serverを使う(Mason管理外)
+        vim.lsp.config("hls", {
+          filetypes = { "haskell", "lhaskell", "cabal" },
+        })
+
         vim.lsp.enable("astro")
         vim.lsp.enable("intelephense")
         vim.lsp.enable("lua_ls")
         vim.lsp.enable("pyright")
         vim.lsp.enable("ts_ls")
+        vim.lsp.enable("hls")
       end,
     },
 
@@ -245,6 +252,7 @@ require("lazy").setup({
         ensure_installed = {
           "astro",
           "bash",
+          "haskell",
           "html",
           "javascript",
           "json",
