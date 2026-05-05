@@ -31,7 +31,8 @@
     "ask": [
       "Bash(rm -rf *)",
       "Bash(rm -r *)"
-    ]
+    ],
+    "defaultMode": "auto"
   },
   "statusLine": {
     "type": "command",
@@ -57,5 +58,6 @@
   "alwaysThinkingEnabled": true,
   "theme": "dark-daltonized",
   "remoteControlAtStartup": true,
-  "agentPushNotifEnabled": true
+  "agentPushNotifEnabled": true,
+  "skipAutoPermissionPrompt": true
 }

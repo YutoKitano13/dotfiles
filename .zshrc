@@ -12,6 +12,9 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+ # ghcup-env
+[ -f "/Users/yuto.kitano/.ghcup/env" ] && . "/Users/yuto.kitano/.ghcup/env"
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
 
@@ -78,3 +81,4 @@ repo() {
 # Starship Prompt
 # ============================================================================
 eval "$(starship init zsh)"
+
