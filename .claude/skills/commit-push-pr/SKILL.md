@@ -53,7 +53,7 @@ git checkout -b <branch-name>
 
 **ブランチ名のルール:**
 - `feat/add-user-auth` のように `<type>/<kebab-case-description>` 形式
-- 以下の命名規則を採用すること
+- `type`は必ず以下の命名規則を採用する
   - feat: 機能開発
   - fix: バグ修正、改善
   - hotfix: 緊急のバグ修正
