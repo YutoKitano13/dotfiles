@@ -53,7 +53,12 @@ git checkout -b <branch-name>
 
 **ブランチ名のルール:**
 - `feat/add-user-auth` のように `<type>/<kebab-case-description>` 形式
-- 短く、変更内容が分かる名前にする
+- 以下の命名規則を採用すること
+  - feat: 機能開発
+  - fix: バグ修正、改善
+  - hotfix: 緊急のバグ修正
+  - refactor: リファクタリング
+  - chore: 雑務
 - ユーザーがブランチ名を指定した場合はそれを使用する
 
 ### Step 4: コミット
