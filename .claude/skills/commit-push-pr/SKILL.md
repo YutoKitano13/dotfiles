@@ -99,6 +99,8 @@ git push -u origin <branch-name>
 #### テンプレートがある場合
 
 テンプレートの各セクションを変更内容に基づいて埋めてPRを作成します。
+PRの本文はなるべく全体像が伝わりやすいように簡潔に保つこと。
+やったことを全て網羅的に記載することは禁止します。
 
 ```bash
 gh pr create --draft --base <base-branch> --title "<type>: <PRタイトル>" --body "$(cat <<'EOF'
