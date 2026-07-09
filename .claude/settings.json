@@ -34,6 +34,7 @@
     ],
     "defaultMode": "auto"
   },
+  "model": "claude-fable-5[1m]",
   "statusLine": {
     "type": "command",
     "command": "echo \"$(bunx ccusage@latest statusline) | $(basename \"$PWD\")($(git branch --show-current 2>/dev/null || echo '-'))\""
@@ -56,8 +57,11 @@
   },
   "language": "Japanese",
   "alwaysThinkingEnabled": true,
+  "effortLevel": "high",
   "theme": "dark-daltonized",
   "remoteControlAtStartup": true,
   "agentPushNotifEnabled": true,
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "advisorModel": "fable",
+  "ultracode": true
 }
