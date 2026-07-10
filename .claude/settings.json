@@ -58,10 +58,10 @@
   "language": "Japanese",
   "alwaysThinkingEnabled": true,
   "effortLevel": "high",
+  "ultracode": true,
+  "advisorModel": "fable",
   "theme": "dark-daltonized",
   "remoteControlAtStartup": true,
   "agentPushNotifEnabled": true,
-  "skipAutoPermissionPrompt": true,
-  "advisorModel": "fable",
-  "ultracode": true
+  "skipAutoPermissionPrompt": true
 }
