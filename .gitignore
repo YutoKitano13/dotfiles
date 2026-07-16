@@ -2,6 +2,10 @@
 .agents/*
 !.agents/.skill-lock.json
 
+# herdr（実行時に生成されるログ・ソケット・セッション状態を除外）
+herdr/*
+!herdr/config.toml
+
 # nvim
 nvim/tt.*
 nvim/.tests
