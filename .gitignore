@@ -1,6 +1,10 @@
 # claude code
 .agents/*
 !.agents/.skill-lock.json
+# claude.ai組織スキルの自動同期先（Claude Codeが生成）
+.claude/skills/synced/
+# Claude Codeがスキル削除時に退避するゴミ箱
+.claude/skills/.trash/
 
 # herdr（実行時に生成されるログ・ソケット・セッション状態を除外）
 herdr/*
