@@ -20,3 +20,8 @@ This document defines the project's rules, objectives, and progress management m
   - Long walls of text discourage reading. Prefer short sentences, bullet points, and tables over prose.
   - Write only what the reader needs to make a decision or implement the feature. Omit background that is obvious from the code or the repository.
   - If a section grows beyond a screen, split it or cut it.
+
+## Code vs. Documentation Rules
+
+- When documentation and existing code disagree, **follow the conventions of the code**, not the documentation.
+- **List every discrepancy you found in your final response**, so the user can decide whether to fix the docs or the code.
