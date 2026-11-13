@@ -22,6 +22,14 @@
       "Bash(gh pr diff:*)",
       "Bash(gh api:*)",
       "Bash(playwright-cli:*)",
+      "Bash(gcloud auth list)",
+      "Bash(gcloud config list *)",
+      "Bash(gcloud --version)",
+      "Bash(bq version)",
+      "Bash(bq ls *)",
+      "Bash(bq show *)",
+      "Bash(bq query *)",
+      "Bash(bq head *)",
       "WebFetch",
       "WebSearch",
       "Skill",
@@ -41,18 +49,29 @@
     "command": "echo \"$(bunx ccusage@latest statusline) | $(basename \"$PWD\")($(git branch --show-current 2>/dev/null || echo '-'))\""
   },
   "enabledPlugins": {
-    "code-simplifier@claude-plugins-official": true,
-    "commit-commands@claude-plugins-official": true,
-    "pr-review-toolkit@claude-plugins-official": true,
-    "code-review@claude-plugins-official": true,
     "figma@claude-plugins-official": true,
-    "warp@claude-code-warp": true
+    "postman@claude-plugins-official": true,
+    "fangrowth@fangrowth-workspace": true,
+    "context7@context7-marketplace": true
   },
   "extraKnownMarketplaces": {
     "claude-code-warp": {
       "source": {
         "source": "github",
         "repo": "warpdotdev/claude-code-warp"
+      }
+    },
+    "fangrowth-workspace": {
+      "source": {
+        "source": "github",
+        "repo": "excitejp/fangrowth-workspace"
+      },
+      "autoUpdate": true
+    },
+    "context7-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "upstash/context7"
       }
     }
   },
